@@ -99,3 +99,9 @@ The current analysis is a useful descriptive baseline. These are potential next 
 4. **Prepare a repeatable refresh workflow.** Document input checks, data refresh steps, and validation rules so future data updates can be compared consistently.
 
 Any business action based on these extensions should be tested against updated data and operational context rather than inferred from a historical association alone.
+
+## Reports
+
+- [Business Sales Performance Analytics — PDF](reports/Business%20Sales%20Performance%20Analytics.pdf)
+- [Business Sales Performance Analytics — editable Word report](reports/Business%20Sales%20Performance%20Analytics.docx)
+- [Data quality report](reports/Data_Quality_Report.xlsx)
