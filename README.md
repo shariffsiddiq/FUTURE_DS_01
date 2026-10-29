@@ -1,8 +1,6 @@
 # Business Sales Performance Analytics
 
-**Future Interns — Task 1**
-
-An end-to-end Superstore sales analysis, organized in the workflow order **Excel → Python → Power BI**. The project includes the source and cleaned data, analysis files, reports, dashboard, and visual exports.
+An end-to-end analysis of Superstore sales and profitability, moving from data preparation to repeatable Python analysis and an interactive Power BI report. The goal is to turn order-level data into clear views of sales trends, category and regional performance, and product profitability.
 
 ## Project workflow
 
@@ -10,7 +8,7 @@ An end-to-end Superstore sales analysis, organized in the workflow order **Excel
 
 ### Phase 1 — Excel: data preparation and initial analysis
 
-Start with the Superstore source data, then use the cleaned and validated workbook for analysis. The data quality report and sales trend/category/region visuals provide supporting checks and summaries.
+Prepare and validate the Superstore data before analysis. The quality report and initial sales, category, and regional visuals help check the data and surface useful questions.
 
 - Source data: [`data/Sample - Superstore.csv`](data/Sample%20-%20Superstore.csv)
 - Cleaned dataset: [`excel/Superstore_Cleaned_Validated.xlsx`](excel/Superstore_Cleaned_Validated.xlsx)
@@ -30,7 +28,7 @@ Start with the Superstore source data, then use the cleaned and validated workbo
 
 ### Phase 2 — Python: repeatable analysis
 
-The Python script reads the cleaned workbook, calculates overall KPIs and sales/profit summaries by time, category, sub-category, region, and product, then writes a results workbook and CSV summaries.
+The Python script reads the cleaned workbook and calculates overall KPIs and sales/profit summaries by time, category, sub-category, region, and product. It writes a results workbook and CSV summaries and displays a monthly sales chart.
 
 - Analysis script: [`python/superstore_analysis.py`](python/superstore_analysis.py)
 - Run instructions: [`python/Python_Analysis_Readme.txt`](python/Python_Analysis_Readme.txt)
@@ -46,11 +44,11 @@ python -m pip install pandas numpy matplotlib openpyxl
 python python/superstore_analysis.py
 ```
 
-The script uses the cleaned workbook in `python/` when present, or falls back to `excel/`. It writes the results workbook and CSV files beside the script and displays a monthly sales chart.
+The script uses the cleaned workbook in `python/` when present, or falls back to `excel/`. It writes the results workbook and CSV files beside the script.
 
 ### Phase 3 — Power BI: interactive dashboards
 
-Open the Power BI report to explore sales performance and product profitability. The screenshots below are static previews; use the `.pbix` file for the interactive report.
+Explore sales performance and product profitability in the interactive Power BI report. The screenshots below are static previews; open the `.pbix` file in Power BI Desktop to use the report.
 
 - Power BI report: [`powerbi/Superstore_Sales_Dashboard.pbix`](powerbi/Superstore_Sales_Dashboard.pbix)
 
@@ -90,3 +88,14 @@ visuals/
   sales_performance_dashboard.png
   yearly_sales_trend.png
 ```
+
+## Future implementation roadmap
+
+The current analysis is a useful descriptive baseline. These are potential next steps—not features already included in the project:
+
+1. **Add forecasting with a proper time-based evaluation.** Compare simple seasonal baselines with forecasting methods, and report how well they perform on held-out periods before using projections.
+2. **Study discount and margin trade-offs.** Check how discount levels relate to profit by product, category, and region; treat the results as associations unless supported by a stronger causal design.
+3. **Make the dashboard easier to monitor.** Add clearly defined KPI targets, time-period comparisons, and focused views for loss-making products and changing regional performance.
+4. **Prepare a repeatable refresh workflow.** Document input checks, data refresh steps, and validation rules so future data updates can be compared consistently.
+
+Any business action based on these extensions should be tested against updated data and operational context rather than inferred from a historical association alone.
